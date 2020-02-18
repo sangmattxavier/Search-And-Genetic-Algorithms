@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JavaFxApplication.iml" filepath="$PROJECT_DIR$/JavaFxApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Search-And-Genetic-Algorithms.iml" filepath="$PROJECT_DIR$/Search-And-Genetic-Algorithms.iml" />
     </modules>
   </component>
 </project>
-
