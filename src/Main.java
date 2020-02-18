@@ -27,5 +27,8 @@ public class Main {
                 .replace("[", "")
                 .replace("]", "")
                 .replace(",", ""));
+
+        BFS d = new BFS();
+        d.BFS(grid);
     }
 }

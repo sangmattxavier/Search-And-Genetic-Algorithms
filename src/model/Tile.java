@@ -6,6 +6,15 @@ public class Tile {
     private boolean isOccupied;
     private int yPosition;
     private int xPosition;
+    private boolean visited;
+
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
 
     public int getxPosition() {
         return xPosition;
@@ -21,6 +30,10 @@ public class Tile {
 
     public void setyPosition(int yPosition) {
         this.yPosition = yPosition;
+    }
+
+    public String getPosition(){
+        return this.xPosition+", "+this.yPosition;
     }
 
     public Tile(int arraySize){
@@ -44,8 +57,8 @@ public class Tile {
     }
 
     public String toString(){
-        return Integer.toString(this.number);
-        // return "("+this.xPosition + ", "+ this.yPosition+")";
+        // return Integer.toString(this.number);
+        return this.number+"("+this.xPosition + ", "+ this.yPosition+")";
     }
 
 
