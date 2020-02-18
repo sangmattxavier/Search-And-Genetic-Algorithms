@@ -44,7 +44,8 @@ public class Tile {
     }
 
     public String toString(){
-        return "("+this.xPosition + ", "+ this.yPosition+")";
+        return Integer.toString(this.number);
+        // return "("+this.xPosition + ", "+ this.yPosition+")";
     }
 
 
