@@ -12,8 +12,25 @@ public class Tile {
     public Tile down = null;
     public Tile right = null;
     public Tile left = null;
-    private boolean visited;
-    private boolean hasMoves;
+    private boolean visited = false;
+    private boolean hasMoves = false;
+    private int minimumDistance = -1;
+
+    public int getMinimumDistance() {
+        return minimumDistance;
+    }
+
+    public void setMinimumDistance(int minimumDistance) {
+        this.minimumDistance = minimumDistance;
+    }
+
+    public boolean isMinimumDistance(int d){
+        if (d<minimumDistance){
+            return false;
+        } else{
+            return true;
+        }
+    }
 
     public Tile(int xPos, int yPos, int arraySize, Tile[][] grid) {
         this.xPos = xPos;
