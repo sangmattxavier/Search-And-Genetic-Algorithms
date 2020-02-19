@@ -1,12 +1,44 @@
 package model;
+
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Tile {
     private int number;
     private boolean isOccupied;
-    private int yPosition;
-    private int xPosition;
+    private int yPos;
+    private int xPos;
+    public Tile next;
+    public Tile up = null;
+    public Tile down = null;
+    public Tile right = null;
+    public Tile left = null;
     private boolean visited;
+    private boolean hasMoves;
+
+    public Tile(int xPos, int yPos, int arraySize, Tile[][] grid) {
+        this.xPos = xPos;
+        this.yPos = yPos;
+        this.number = ThreadLocalRandom.current().nextInt(1, arraySize);
+//        // Move up
+//        if ((this.yPos + this.number) < arraySize) {
+//            this.up = grid[this.xPos][this.yPos+this.number];
+//        }
+//        // Move down
+//        if ((this.yPos - this.number) > -1) {
+//            this.down = grid[this.xPos][this.yPos - this.number];
+//        }
+//        // Move right
+//        if ((this.xPos + this.number) < arraySize) {
+//            this.right = grid[this.xPos + this.number][this.yPos];
+//        }
+//        // Move left
+//        if ((this.xPos - this.number) > -1) {
+//            this.left = grid[this.xPos - this.number][this.yPos];
+//        }
+    }
+
+    public void setValidMoves(Tile[][] grid, int arraySize) {
+    }
 
     public boolean isVisited() {
         return visited;
@@ -16,36 +48,12 @@ public class Tile {
         this.visited = visited;
     }
 
-    public int getxPosition() {
-        return xPosition;
+    public boolean hasMoves() {
+        return hasMoves;
     }
 
-    public void setxPosition(int xPosition) {
-        this.xPosition = xPosition;
-    }
-
-    public int getyPosition() {
-        return yPosition;
-    }
-
-    public void setyPosition(int yPosition) {
-        this.yPosition = yPosition;
-    }
-
-    public String getPosition(){
-        return this.xPosition+", "+this.yPosition;
-    }
-
-    public Tile(int arraySize){
-        this.number = ThreadLocalRandom.current().nextInt(1, arraySize);
-    }
-
-    public boolean isOccupied() {
-        return isOccupied;
-    }
-
-    public void setOccupied(boolean occupied) {
-        isOccupied = occupied;
+    public void setHasMoves(boolean hasMoves) {
+        this.hasMoves = hasMoves;
     }
 
     public int getNumber() {
@@ -58,8 +66,35 @@ public class Tile {
 
     public String toString(){
         // return Integer.toString(this.number);
-        return this.number+"("+this.xPosition + ", "+ this.yPosition+")";
+        return this.number+"("+this.xPos + ", "+ this.yPos + ")";
     }
 
+    public int getxPosition() {
+            return xPos;
+        }
 
+    public void setxPosition(int xPos) {
+        this.xPos = xPos;
+    }
+
+    public int getyPosition() {
+        return yPos;
+    }
+
+    public void setyPosition(int yPos) {
+        this.yPos = yPos;
+    }
+
+    public String getPosition(){
+        return this.xPos+", "+this.yPos;
+    }
+//
+//
+//    public boolean isOccupied() {
+//        return isOccupied;
+//    }
+//
+//    public void setOccupied(boolean occupied) {
+//        isOccupied = occupied;
+//    }
 }
