@@ -9,11 +9,9 @@ public class BFS {
 
         Tile t = grid[0][0];
         t.setMinimumDistance(0);
-        //int counter = 1;
-        //int pen = counter/4;
-
         Queue<Tile> q = new LinkedList<Tile>();
         q.add(t);
+
         do {
             try{
                 // Move up
@@ -43,9 +41,7 @@ public class BFS {
                 for(Tile tile: t.children) {
                     tile.setVisited(true);
                     tile.parent = t;
-                    if(tile.isMinimumDistance(tile.parent.getMinimumDistance()+1)){
-                        tile.setMinimumDistance(tile.parent.getMinimumDistance()+1);
-                    }
+                    tile.setMinimumDistance(tile.parent.getMinimumDistance()+1);
                 }
 
                 q.remove();
@@ -63,15 +59,24 @@ public class BFS {
 
     public void printMinimumDistance(Tile[][] grid){
         System.out.println();
+        int k = 0;
+        int value = 0;
         for(int i = 0; i <grid.length; i++){
             for(int j = 0; j<grid.length; j++){
                 if(grid[i][j].getMinimumDistance() == -1){
                     System.out.print("X\t");
+                    k--;
                 } else{
                     System.out.print(grid[i][j].getMinimumDistance()+"\t");
                 }
             }
             System.out.println();
         }
+        if (grid[grid.length-1][grid.length-1].getMinimumDistance() == -1) {
+            value = k;
+        } else {
+            value = grid[grid.length-1][grid.length-1].getMinimumDistance();
+        }
+        System.out.println("The value of this grid is: " + value);
     }
 }

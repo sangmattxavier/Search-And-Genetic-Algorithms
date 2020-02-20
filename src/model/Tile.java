@@ -24,16 +24,14 @@ public class Tile {
     }
 
     public void setMinimumDistance(int minimumDistance) {
-        this.minimumDistance = minimumDistance;
+        if (this.isMinimumDistance(minimumDistance))
+            this.minimumDistance = minimumDistance;
     }
 
     public boolean isMinimumDistance(int d){
-        //System.out.println(this.toString()+"Comparing current distance: "+minimumDistance+" -> "+d);
         if (d>minimumDistance && minimumDistance != -1){
-            //System.out.println("false");
             return false;
         } else{
-            //System.out.println("true");
             return true;
         }
     }
