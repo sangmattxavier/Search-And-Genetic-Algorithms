@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b821560f-64ad-4751-9571-a365468fb29c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Search-And-Genetic-Algorithms/BFS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Search-And-Genetic-Algorithms/BFS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Search-And-Genetic-Algorithms/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Search-And-Genetic-Algorithms/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Search-And-Genetic-Algorithms/model/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Search-And-Genetic-Algorithms/model/Tile.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Tile.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,8 +22,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="286">
-                  <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="27" selection-end-column="31" />
+                <state relative-caret-position="345">
+                  <caret line="23" column="39" lean-forward="true" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -32,8 +34,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/BFS.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="338">
-                  <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
+                <state relative-caret-position="309">
+                  <caret line="94" column="41" lean-forward="true" selection-start-line="94" selection-start-column="41" selection-end-line="94" selection-end-column="41" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#282#288#0" expanded="true" />
@@ -63,8 +65,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/model/Tile.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="715">
-                  <caret line="88" column="14" lean-forward="true" selection-start-line="88" selection-start-column="14" selection-end-line="88" selection-end-column="14" />
+                <state relative-caret-position="415">
+                  <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
                   <folding>
                     <element signature="e#425#426#0" expanded="true" />
                     <element signature="e#463#464#0" expanded="true" />
@@ -82,10 +84,10 @@
                     <element signature="e#1622#1623#0" expanded="true" />
                     <element signature="e#1663#1664#0" expanded="true" />
                     <element signature="e#1699#1700#0" expanded="true" />
-                    <element signature="e#2483#2484#0" expanded="true" />
-                    <element signature="e#2557#2558#0" expanded="true" />
-                    <element signature="e#2617#2618#0" expanded="true" />
-                    <element signature="e#2691#2692#0" expanded="true" />
+                    <element signature="e#2546#2547#0" expanded="true" />
+                    <element signature="e#2620#2621#0" expanded="true" />
+                    <element signature="e#2680#2681#0" expanded="true" />
+                    <element signature="e#2754#2755#0" expanded="true" />
                     <element signature="e#2725#2726#0" expanded="true" />
                     <element signature="e#2772#2773#0" expanded="true" />
                   </folding>
@@ -107,6 +109,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>searc</find>
+      <find>t.setM</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -116,8 +119,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/BFS.java" />
         <option value="$PROJECT_DIR$/src/model/Tile.java" />
+        <option value="$PROJECT_DIR$/src/BFS.java" />
       </list>
     </option>
   </component>
@@ -162,7 +165,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1582169338725" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1582174989598" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -211,7 +214,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4961000" />
+    <option name="totallyTimeSpent" value="7711000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -307,29 +310,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="27" selection-end-column="31" />
+        <state relative-caret-position="345">
+          <caret line="23" column="39" lean-forward="true" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BFS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#282#288#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Tile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="715">
-          <caret line="88" column="14" lean-forward="true" selection-start-line="88" selection-start-column="14" selection-end-line="88" selection-end-column="14" />
+        <state relative-caret-position="415">
+          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
           <folding>
             <element signature="e#425#426#0" expanded="true" />
             <element signature="e#463#464#0" expanded="true" />
@@ -347,12 +339,23 @@
             <element signature="e#1622#1623#0" expanded="true" />
             <element signature="e#1663#1664#0" expanded="true" />
             <element signature="e#1699#1700#0" expanded="true" />
-            <element signature="e#2483#2484#0" expanded="true" />
-            <element signature="e#2557#2558#0" expanded="true" />
-            <element signature="e#2617#2618#0" expanded="true" />
-            <element signature="e#2691#2692#0" expanded="true" />
+            <element signature="e#2546#2547#0" expanded="true" />
+            <element signature="e#2620#2621#0" expanded="true" />
+            <element signature="e#2680#2681#0" expanded="true" />
+            <element signature="e#2754#2755#0" expanded="true" />
             <element signature="e#2725#2726#0" expanded="true" />
             <element signature="e#2772#2773#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BFS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="94" column="41" lean-forward="true" selection-start-line="94" selection-start-column="41" selection-end-line="94" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#282#288#0" expanded="true" />
           </folding>
         </state>
       </provider>

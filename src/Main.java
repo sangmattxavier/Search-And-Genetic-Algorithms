@@ -20,33 +20,20 @@ public class Main {
             }
         }
 
+        for(int i = 0; i <max; i++){
+            for(int j = 0; j<max; j++){
+                System.out.print(grid[i][j]+"\t");
+            }
+            System.out.println();
+        }
 
-        System.out.println(Arrays.deepToString(grid)
-            .replace("], ", "]\n")
-            .replace("[", "")
-            .replace("]", "")
-            .replace(",", ""));
+//        System.out.println(Arrays.deepToString(grid)
+//            .replace("], ", "]\n")
+//            .replace("[", "")
+//            .replace("]", "")
+//            .replace(",", ""));
 
         BFS d = new BFS();
         d.BFS(grid);
     }
-
-//    public static void setValidMoves( Tile t, Tile[][] grid) {
-//        // Move up
-//        if ((t.getyPosition() + t.getNumber()) > Main.max - 1) {
-//            t.up = grid[t.getxPosition()][t.getyPosition()+t.getNumber()];
-//        }
-//        // Move down
-//        if ((t.getyPosition() - t.getNumber()) < 0) {
-//            t.down = grid[t.getxPosition()][t.getyPosition()-t.getNumber()];
-//        }
-//        // Move right
-//        if ((t.getxPosition() + t.getNumber()) > Main.max - 1) {
-//            t.up = grid[t.getxPosition() + t.getNumber()][t.getyPosition()];
-//        }
-//        // Move left
-//        if ((t.getxPosition() - t.getNumber()) < 0) {
-//            t.up = grid[t.getxPosition() - t.getNumber()][t.getyPosition()];
-//        }
-//    }
 }

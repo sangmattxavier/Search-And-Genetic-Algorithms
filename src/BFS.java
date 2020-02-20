@@ -8,20 +8,23 @@ public class BFS {
     public void BFS(Tile[][] grid) {
 
         Tile t = grid[0][0];
+        t.setMinimumDistance(0);
         int counter = 1;
 
         Queue<Tile> q = new LinkedList<Tile>();
 
         do {
             try{
-                System.out.println("\nNew Root Node");
+                //System.out.println("\nNew Root Node");
                 // Move up
                 if ((t.getyPosition() + t.getNumber()) < grid.length && !grid[t.getxPosition()][t.getyPosition() + t.getNumber()].isVisited()) {
                     t.up = grid[t.getxPosition()][t.getyPosition() + t.getNumber()];
                     t.up.setVisited(true);
                     t.setHasMoves(true);
                     q.add(t.up);
-                    t.up.setMinimumDistance(counter);
+                    if(t.up.isMinimumDistance(counter)){
+                        t.up.setMinimumDistance(counter);
+                    }
                 }
                 // Move down
                 if ((t.getyPosition() - t.getNumber()) > -1 && !grid[t.getxPosition()][t.getyPosition() - t.getNumber()].isVisited()) {
@@ -29,7 +32,9 @@ public class BFS {
                     t.down.setVisited(true);
                     t.setHasMoves(true);
                     q.add(t.down);
-                    t.down.setMinimumDistance(counter);
+                    if(t.down.isMinimumDistance(counter)){
+                        t.down.setMinimumDistance(counter);
+                    }
                 }
                 // Move right
                 if ((t.getxPosition() + t.getNumber()) < grid.length && !grid[t.getxPosition() + t.getNumber()][t.getyPosition()].isVisited()) {
@@ -37,7 +42,9 @@ public class BFS {
                     t.right.setVisited(true);
                     t.setHasMoves(true);
                     q.add(t.right);
-                    t.right.setMinimumDistance(counter);
+                    if(t.right.isMinimumDistance(counter)){
+                        t.right.setMinimumDistance(counter);
+                    }
                 }
                 // Move left
                 if ((t.getxPosition() - t.getNumber()) > -1 && !grid[t.getxPosition() - t.getNumber()][t.getyPosition()].isVisited()) {
@@ -45,14 +52,16 @@ public class BFS {
                     t.left.setVisited(true);
                     t.setHasMoves(true);
                     q.add(t.left);
-                    t.left.setMinimumDistance(counter);
+                    if(t.left.isMinimumDistance(counter)){
+                        t.left.setMinimumDistance(counter);
+                    }
                 }
 
-                if(grid[grid.length-1][grid.length-1].isVisited()){
-                    System.out.println("GOTTEM");
-                }
+//                if(grid[grid.length-1][grid.length-1].isVisited()){
+//                    System.out.println("GOTTEM");
+//                }
                 q.remove();
-                System.out.println("Dead-end at: " + t.toString());
+//                System.out.println("Dead-end at: " + t.toString());
 
                 t = q.peek();
 
@@ -65,25 +74,34 @@ public class BFS {
         while(q.peek() != null);
 
 
-        if(grid[grid.length-1][grid.length-1].isVisited()){
-            System.out.println("GOTTEM");
-        }
+//        if(grid[grid.length-1][grid.length-1].isVisited()){
+//            System.out.println("GOTTEM");
+//        }
 
-        for(int i = 0; i<grid.length; i++){
-            for(int j = 0; j<grid.length; j++){
-                System.out.println("min distance for: "+grid[i][j]+" -> "+grid[i][j].getMinimumDistance());
-            }
-        }
+//        for(int i = 0; i<grid.length; i++){
+//            for(int j = 0; j<grid.length; j++){
+//                System.out.println("min distance for: "+grid[i][j]+" -> "+grid[i][j].getMinimumDistance());
+//            }
+//        }
 
         printMinimumDistance(grid);
     }
 
     public void printMinimumDistance(Tile[][] grid){
-
-        System.out.println(Arrays.deepToString(grid)
-                .replace("], ", "]\n")
-                .replace("[", "")
-                .replace("]", "")
-                .replace(",", ""));
+        System.out.println();
+        for(int i = 0; i <grid.length; i++){
+            for(int j = 0; j<grid.length; j++){
+                if(grid[i][j].getMinimumDistance() == -1){
+                    System.out.print("X\t");
+                } else{
+                    System.out.print(grid[i][j].getMinimumDistance()+"\t");
+//                    System.out.print(grid[i][j].getMinimumDistance() +
+//                            "(" + grid[i][j].getxPosition() +
+//                            ", " + grid[i][j].getyPosition() +
+//                            ")"+"\t");
+                }
+            }
+            System.out.println();
+        }
     }
 }

@@ -25,9 +25,12 @@ public class Tile {
     }
 
     public boolean isMinimumDistance(int d){
-        if (d<minimumDistance){
+        //System.out.println(this.toString()+"Comparing current distance: "+minimumDistance+" -> "+d);
+        if (d>minimumDistance && minimumDistance != -1){
+            //System.out.println("false");
             return false;
         } else{
+            //System.out.println("true");
             return true;
         }
     }
@@ -83,12 +86,7 @@ public class Tile {
 
     public String toString(){
         // return Integer.toString(this.number);
-        if(visited) {
-            return this.minimumDistance + "(" + this.xPos + ", " + this.yPos + ")";
-        }
-        else {
             return this.number + "(" + this.xPos + ", " + this.yPos + ")";
-        }
     }
 
     public int getxPosition() {
