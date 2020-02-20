@@ -83,7 +83,12 @@ public class Tile {
 
     public String toString(){
         // return Integer.toString(this.number);
-        return this.number+"("+this.xPos + ", "+ this.yPos + ")";
+        if(visited) {
+            return this.minimumDistance + "(" + this.xPos + ", " + this.yPos + ")";
+        }
+        else {
+            return this.number + "(" + this.xPos + ", " + this.yPos + ")";
+        }
     }
 
     public int getxPosition() {

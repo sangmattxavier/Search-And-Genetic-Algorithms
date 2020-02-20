@@ -1,10 +1,7 @@
 
 import model.Tile;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class BFS {
 
@@ -77,5 +74,16 @@ public class BFS {
                 System.out.println("min distance for: "+grid[i][j]+" -> "+grid[i][j].getMinimumDistance());
             }
         }
+
+        printMinimumDistance(grid);
+    }
+
+    public void printMinimumDistance(Tile[][] grid){
+
+        System.out.println(Arrays.deepToString(grid)
+                .replace("], ", "]\n")
+                .replace("[", "")
+                .replace("]", "")
+                .replace(",", ""));
     }
 }
