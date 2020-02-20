@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Tile {
@@ -7,11 +8,13 @@ public class Tile {
     private boolean isOccupied;
     private int yPos;
     private int xPos;
+    public Tile parent;
     public Tile next;
     public Tile up = null;
     public Tile down = null;
     public Tile right = null;
     public Tile left = null;
+    public ArrayList<Tile> children = new ArrayList<Tile>();
     private boolean visited = false;
     private boolean hasMoves = false;
     private int minimumDistance = -1;
@@ -39,22 +42,6 @@ public class Tile {
         this.xPos = xPos;
         this.yPos = yPos;
         this.number = ThreadLocalRandom.current().nextInt(1, arraySize);
-//        // Move up
-//        if ((this.yPos + this.number) < arraySize) {
-//            this.up = grid[this.xPos][this.yPos+this.number];
-//        }
-//        // Move down
-//        if ((this.yPos - this.number) > -1) {
-//            this.down = grid[this.xPos][this.yPos - this.number];
-//        }
-//        // Move right
-//        if ((this.xPos + this.number) < arraySize) {
-//            this.right = grid[this.xPos + this.number][this.yPos];
-//        }
-//        // Move left
-//        if ((this.xPos - this.number) > -1) {
-//            this.left = grid[this.xPos - this.number][this.yPos];
-//        }
     }
 
     public void setValidMoves(Tile[][] grid, int arraySize) {
@@ -69,7 +56,7 @@ public class Tile {
     }
 
     public boolean hasMoves() {
-        return hasMoves;
+        return this.hasMoves;
     }
 
     public void setHasMoves(boolean hasMoves) {

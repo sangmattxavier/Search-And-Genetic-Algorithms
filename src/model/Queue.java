@@ -12,6 +12,10 @@ public class Queue {
         last = null;
     }
 
+    public Tile peek() {
+        return this.first;
+    }
+
     public boolean isEmpty(){
         return first == null;
     }
