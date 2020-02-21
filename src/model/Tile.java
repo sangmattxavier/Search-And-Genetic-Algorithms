@@ -9,10 +9,6 @@ public class Tile {
     private int xPos;
     public Tile parent;
     public Tile next;
-    public Tile up = null;
-    public Tile down = null;
-    public Tile right = null;
-    public Tile left = null;
     public ArrayList<Tile> children = new ArrayList<>();
     private boolean visited = false;
     private int minimumDistance = -1;

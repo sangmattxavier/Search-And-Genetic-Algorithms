@@ -16,27 +16,27 @@ public class BFS {
             try{
                 // Move up
                 if ((t.getyPosition() + t.getNumber()) < grid.length && !grid[t.getyPosition() + t.getNumber()][t.getxPosition()].isVisited()) {
-                    t.up = grid[t.getyPosition() + t.getNumber()][t.getxPosition()];
-                    t.children.add(t.up);
-                    q.add(t.up);
+                    Tile up = grid[t.getyPosition() + t.getNumber()][t.getxPosition()];
+                    t.children.add(up);
+                    q.add(up);
                 }
                 // Move down
                 if ((t.getyPosition() - t.getNumber()) > -1 && !grid[t.getyPosition() - t.getNumber()][t.getxPosition()].isVisited()) {
-                    t.down = grid[t.getyPosition() - t.getNumber()][t.getxPosition()];
-                    t.children.add(t.down);
-                    q.add(t.down);
+                    Tile down = grid[t.getyPosition() - t.getNumber()][t.getxPosition()];
+                    t.children.add(down);
+                    q.add(down);
                 }
                 // Move right
                 if ((t.getxPosition() + t.getNumber()) < grid.length && !grid[t.getyPosition()][t.getxPosition() + t.getNumber()].isVisited()) {
-                    t.right = grid[t.getyPosition()][t.getxPosition() + t.getNumber()];
-                    t.children.add(t.right);
-                    q.add(t.right);
+                    Tile right = grid[t.getyPosition()][t.getxPosition() + t.getNumber()];
+                    t.children.add(right);
+                    q.add(right);
                 }
                 // Move left
                 if ((t.getxPosition() - t.getNumber()) > -1 && !grid[t.getyPosition()][t.getxPosition() - t.getNumber()].isVisited()) {
-                    t.left = grid[t.getyPosition()][t.getxPosition() - t.getNumber()];
-                    t.children.add(t.left);
-                    q.add(t.left);
+                    Tile left = grid[t.getyPosition()][t.getxPosition() - t.getNumber()];
+                    t.children.add(left);
+                    q.add(left);
                 }
                 for(Tile tile: t.children) {
                     tile.setVisited(true);
@@ -67,5 +67,17 @@ public class BFS {
             }
             System.out.println();
         }
+    }
+
+    public Tile[][] clearMinimumDistance(Tile[][] grid){
+        for(int i = 0; i <grid.length; i++){
+            for(int j = 0; j<grid.length; j++){
+                grid[i][j].setMinimumDistance(-1);
+                grid[i][j].setVisited(false);
+                grid[i][j].children.clear();
+                grid[i][j].parent = null;
+            }
+        }
+        return grid;
     }
 }

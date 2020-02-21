@@ -51,7 +51,11 @@ public class HillClimb {
             }
 
             BFS b = new BFS();
+            temp = b.clearMinimumDistance(temp);
+            BFS.printMinimumDistance(temp);
+
             temp = b.BFS(temp);
+
             BFS.printMinimumDistance(temp);
             BFS.printMinimumDistance(grid);
             if (evaluate(temp) > evaluate(grid)) {
