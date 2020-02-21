@@ -50,20 +50,9 @@ public class HillClimb {
             System.out.println("To random valued tile: "+randomTile.getxPosition()+", "+randomTile.getyPosition()+" ... value: "+randomTile.getNumber());
             temp[x][y]=randomTile;
 
-            // print regular board
-            for(int k = 0; k <temp.length; k++){
-                for(int j = 0; j<temp.length; j++){
-                    System.out.print(temp[k][j]+"\t");
-                }
-                System.out.println();
-            }
-
             BFS b = new BFS();
             temp = b.clearMinimumDistance(temp);
-            BFS.printMinimumDistance(temp);
             temp = b.BFS(temp);
-            BFS.printMinimumDistance(temp);
-            BFS.printMinimumDistance(grid);
 
             if (evaluate(temp) > originalGridValue) {
                 System.out.println("Random tile change made the board longer to solve!");

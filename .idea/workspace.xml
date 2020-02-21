@@ -53,8 +53,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/model/Tile.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="835">
-                  <caret line="74" selection-start-line="74" selection-start-column="2" selection-end-line="76" selection-end-column="7" />
+                <state relative-caret-position="880">
+                  <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#584#585#0" expanded="true" />
@@ -77,6 +77,8 @@
                     <element signature="e#2127#2128#0" expanded="true" />
                     <element signature="e#2161#2162#0" expanded="true" />
                     <element signature="e#2208#2209#0" expanded="true" />
+                    <element signature="e#1639#1640#0" expanded="true" />
+                    <element signature="e#1716#1717#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -104,8 +106,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/HillClimb.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="580">
-                  <caret line="52" selection-start-line="52" selection-end-line="58" selection-end-column="13" />
+                <state relative-caret-position="655">
+                  <caret line="54" selection-start-line="54" selection-end-line="54" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -193,7 +195,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1582261193284" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1582261266599" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
@@ -244,7 +246,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6756000" />
+    <option name="totallyTimeSpent" value="6815000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-838" y="-1440" width="3440" height="1440" extended-state="0" />
@@ -351,8 +353,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Tile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="835">
-          <caret line="74" selection-start-line="74" selection-start-column="2" selection-end-line="76" selection-end-column="7" />
+        <state relative-caret-position="880">
+          <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#584#585#0" expanded="true" />
@@ -375,14 +377,16 @@
             <element signature="e#2127#2128#0" expanded="true" />
             <element signature="e#2161#2162#0" expanded="true" />
             <element signature="e#2208#2209#0" expanded="true" />
+            <element signature="e#1639#1640#0" expanded="true" />
+            <element signature="e#1716#1717#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/HillClimb.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="52" selection-start-line="52" selection-end-line="58" selection-end-column="13" />
+        <state relative-caret-position="655">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

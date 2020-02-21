@@ -72,8 +72,8 @@ public class Tile {
         return this.xPos+", "+this.yPos;
     }
 
-//    public String toString(){
-//        return this.number + "(" + this.xPos + ", " + this.yPos + ")";
-//    }
+    public String toString(){
+        return this.number + "(" + this.xPos + ", " + this.yPos + ")";
+    }
 
 }
