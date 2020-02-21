@@ -27,13 +27,8 @@ public class Main {
             System.out.println();
         }
 
-//        System.out.println(Arrays.deepToString(grid)
-//            .replace("], ", "]\n")
-//            .replace("[", "")
-//            .replace("]", "")
-//            .replace(",", ""));
-
         BFS d = new BFS();
         d.BFS(grid);
+        d.hillClimb(10, grid);
     }
 }

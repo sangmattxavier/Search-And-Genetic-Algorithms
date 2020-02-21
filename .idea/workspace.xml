@@ -4,9 +4,8 @@
     <list default="true" id="b821560f-64ad-4751-9571-a365468fb29c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Search-And-Genetic-Algorithms/BFS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Search-And-Genetic-Algorithms/BFS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Search-And-Genetic-Algorithms/model/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Search-And-Genetic-Algorithms/model/Tile.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +79,7 @@
       <workItem from="1581997775396" duration="6383000" />
       <workItem from="1582006810912" duration="1853000" />
       <workItem from="1582070015729" duration="14065000" />
-      <workItem from="1582237703376" duration="4804000" />
+      <workItem from="1582237703376" duration="10714000" />
     </task>
     <servers />
   </component>
