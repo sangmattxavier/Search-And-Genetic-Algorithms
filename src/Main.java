@@ -34,6 +34,14 @@ public class Main {
             }
         }
 
+        // print regular board
+        for(int i = 0; i <max; i++){
+            for(int j = 0; j<max; j++){
+                System.out.print(grid[i][j]+"\t");
+            }
+            System.out.println();
+        }
+
         // print min distance board
         BFS.printMinimumDistance(grid);
         HillClimb hc = new HillClimb();
