@@ -2,15 +2,14 @@
 import model.Tile;
 
 import java.util.*;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class BFS {
 
-    public void BFS(Tile[][] grid) {
+    public Tile[][] BFS(Tile[][] grid) {
 
         Tile t = grid[0][0];
         t.setMinimumDistance(0);
-        Queue<Tile> q = new LinkedList<Tile>();
+        Queue<Tile> q = new LinkedList<>();
         q.add(t);
 
         do {
@@ -54,53 +53,20 @@ public class BFS {
 
         }
         while(q.peek() != null);
-
-        System.out.println("The value of this grid is: " + evaluate(grid));
+        return grid;
     }
 
-    public int evaluate(Tile[][] grid){
+    public static void printMinimumDistance(Tile[][] grid){
         System.out.println();
-        int k = 0;
-        int value = 0;
         for(int i = 0; i <grid.length; i++){
             for(int j = 0; j<grid.length; j++){
                 if(grid[i][j].getMinimumDistance() == -1){
                     System.out.print("X\t");
-                    k--;
                 } else{
                     System.out.print(grid[i][j].getMinimumDistance()+"\t");
                 }
             }
             System.out.println();
         }
-        if (grid[grid.length-1][grid.length-1].getMinimumDistance() == -1) {
-            value = k;
-        } else {
-            value = grid[grid.length-1][grid.length-1].getMinimumDistance();
-        }
-        return value;
     }
-
-    public Tile[][] hillClimb(int iterations, Tile[][] grid) {
-        Tile[][] temp = grid;
-        for(int i = 0; i < iterations; i++) {
-            Tile randomTile = temp[ThreadLocalRandom.current().nextInt(0, grid.length-1)][ThreadLocalRandom.current().nextInt(0, grid.length-1)];
-            int initNum = randomTile.getNumber();
-            while (randomTile.getNumber() == initNum) {
-                randomTile.setNumber(ThreadLocalRandom.current().nextInt(1, grid.length-1));
-            }
-            if (evaluate(temp) > evaluate(grid)) {
-                grid = temp;
-            }
-            System.out.print(evaluate(grid));
-        }
-        for(int i = 0; i <grid.length; i++){
-            for(int j = 0; j<grid.length; j++){
-                System.out.print(grid[i][j]+"\t");
-            }
-            System.out.println();
-        }
-        return grid;
-    }
-
 }

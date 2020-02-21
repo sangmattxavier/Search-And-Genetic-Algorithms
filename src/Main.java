@@ -11,24 +11,38 @@ public class Main {
         max = read.nextInt();
         Tile[][] grid = new Tile[max][max];
 
-        // i = row & y coordinate , j = column & x coordinate
-        // (x,y) = (j,i)
-        for(int i = 0; i <max; i++){
-            for(int j = 0; j<max; j++){
-                Tile t = new Tile(j, i, max, grid);
-                grid[i][j]=t;
+        // use BFS to get minimum distance and check if board is valid
+        boolean validGrid = false;
+        while(!validGrid){
+
+            // i = row & y coordinate , j = column & x coordinate
+            // (x,y) = (j,i)
+            for(int i = 0; i <max; i++){
+                for(int j = 0; j<max; j++){
+                    Tile t = new Tile(j, i, max);
+                    grid[i][j]=t;
+                }
+            }
+
+            BFS b = new BFS();
+            grid = b.BFS(grid);
+            if(grid[grid.length-1][grid.length-1].isVisited()){
+                System.out.println("good board found");
+                validGrid = true;
+            } else{
+                System.out.println("bad board found");
             }
         }
 
-        for(int i = 0; i <max; i++){
-            for(int j = 0; j<max; j++){
-                System.out.print(grid[i][j]+"\t");
-            }
-            System.out.println();
-        }
+        // print min distance board
+        BFS.printMinimumDistance(grid);
+        HillClimb hc = new HillClimb();
+        System.out.println("The value of this grid is: " + hc.evaluate(grid));
 
-        BFS d = new BFS();
-        d.BFS(grid);
-        d.hillClimb(10, grid);
+        // Hill Climb
+        grid = hc.hillClimb(10, grid);
+        BFS.printMinimumDistance(grid);
+        System.out.println("The value of this grid after Hill Climb is: " + hc.evaluate(grid));
+
     }
 }

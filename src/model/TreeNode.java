@@ -12,7 +12,7 @@ public class TreeNode {
 
     public TreeNode() {
         this.parent = null;
-        this.children = new ArrayList<TreeNode>();
+        this.children = new ArrayList<>();
     }
 
     public TreeNode(int x, int y) {
@@ -20,7 +20,7 @@ public class TreeNode {
         this.y = y;
         this.parent = new TreeNode();
         this.depth = 0;
-        this.children = new ArrayList<TreeNode>();
+        this.children = new ArrayList<>();
     }
 
     public TreeNode(int x, int y, TreeNode parent) {
@@ -28,7 +28,7 @@ public class TreeNode {
         this.y = y;
         this.depth = parent.depth + 1;
         this.parent = parent;
-        this.children = new ArrayList<TreeNode>();
+        this.children = new ArrayList<>();
     }
 
     public TreeNode(int x, int y, double distance) {
@@ -36,7 +36,7 @@ public class TreeNode {
         this.y = y;
         this.distance = distance;
         this.parent = parent;
-        this.children = new ArrayList<TreeNode>();
+        this.children = new ArrayList<>();
     }
 
     public TreeNode(int x, int y, TreeNode parent, double distance) {
@@ -45,7 +45,7 @@ public class TreeNode {
         this.depth = parent.depth + 1;
         this.distance = distance;
         this.parent = parent;
-        this.children = new ArrayList<TreeNode>();
+        this.children = new ArrayList<>();
     }
 
     public void addChild(TreeNode child) {
