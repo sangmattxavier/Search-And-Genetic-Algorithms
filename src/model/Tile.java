@@ -13,6 +13,14 @@ public class Tile {
     private boolean visited = false;
     private int minimumDistance = -1;
 
+    public ArrayList<Tile> getChildren() {
+        return children;
+    }
+
+    public void setChildren(ArrayList<Tile> children) {
+        this.children = children;
+    }
+
     public int getMinimumDistance() {
         return minimumDistance;
     }
@@ -22,7 +30,7 @@ public class Tile {
             this.minimumDistance = minimumDistance;
     }
 
-    private boolean isMinimumDistance(int d){
+    public boolean isMinimumDistance(int d){
         if(d>minimumDistance && minimumDistance != -1){
             return false;
         } else{

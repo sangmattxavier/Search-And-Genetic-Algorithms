@@ -51,5 +51,16 @@ public class Main {
         BFS.printMinimumDistance(grid);
         System.out.println("The value of this grid after Hill Climb is: " + hc.evaluate(grid));
 
+        // print regular board
+        for(int i = 0; i <max; i++){
+            for(int j = 0; j<max; j++){
+                System.out.print(grid[i][j]+"\t");
+            }
+            System.out.println();
+        }
+        // DFS
+        DFS d = new DFS();
+        grid = d.depthFirstSearch(grid);
+        BFS.printMinimumDistance(grid);
     }
 }
