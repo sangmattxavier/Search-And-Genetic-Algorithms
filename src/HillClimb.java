@@ -6,7 +6,7 @@ public class HillClimb {
     public int evaluate(Tile[][] grid){
 //        System.out.println();
         int k = 0;
-        int value = 0;
+        int value;
         for(int i = 0; i <grid.length; i++){
             for(int j = 0; j<grid.length; j++){
                 if(grid[i][j].getMinimumDistance() == -1){
@@ -41,11 +41,27 @@ public class HillClimb {
 
             System.out.println("To random valued tile: "+randomTile.getxPosition()+", "+randomTile.getyPosition()+" ... value: "+randomTile.getNumber());
             temp[x][y]=randomTile;
-            if (evaluate(temp) >= evaluate(grid)) {
+
+            // print regular board
+            for(int k = 0; k <temp.length; k++){
+                for(int j = 0; j<temp.length; j++){
+                    System.out.print(temp[k][j]+"\t");
+                }
+                System.out.println();
+            }
+
+            BFS b = new BFS();
+            temp = b.BFS(temp);
+            BFS.printMinimumDistance(temp);
+            BFS.printMinimumDistance(grid);
+            if (evaluate(temp) > evaluate(grid)) {
                 System.out.println("Random tile change made the board longer to solve!");
                 grid = temp;
-            } else{
-                System.out.println("Random tile change did not complicate the board.");
+            } else if (evaluate(temp) == evaluate(grid)) {
+                System.out.println("Random tile change made the board the same!");
+                grid = temp;
+            }  else{
+                System.out.println("Random tile change made it simpler.");
             }
             System.out.println();
 //            System.out.print(evaluate(grid));

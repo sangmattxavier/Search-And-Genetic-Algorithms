@@ -50,7 +50,6 @@ public class BFS {
             } catch(Exception e){
                 System.out.println("Unreachable");
             }
-
         }
         while(q.peek() != null);
         return grid;

@@ -48,7 +48,7 @@ public class Main {
         System.out.println("The value of this grid is: " + hc.evaluate(grid));
 
         // Hill Climb
-        grid = hc.hillClimb(10, grid);
+        grid = hc.hillClimb(100, grid);
         BFS.printMinimumDistance(grid);
         System.out.println("The value of this grid after Hill Climb is: " + hc.evaluate(grid));
 
