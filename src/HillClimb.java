@@ -27,6 +27,7 @@ public class HillClimb {
     }
 
     public Tile[][] hillClimb(int iterations, Tile[][] grid) {
+        System.out.println("\n\nStarting Hill Climb");
         Tile[][] temp = grid;
         for(int i = 0; i < iterations; i++) {
             int x = ThreadLocalRandom.current().nextInt(0, grid.length-1);
@@ -37,8 +38,10 @@ public class HillClimb {
             while (randomTile.getNumber() == initNum) {
                 randomTile.setNumber(ThreadLocalRandom.current().nextInt(1, grid.length-1));
             }
+
             System.out.println("To random valued tile: "+randomTile.getxPosition()+", "+randomTile.getyPosition()+" ... value: "+randomTile.getNumber());
-            if (evaluate(temp) > evaluate(grid)) {
+            temp[x][y]=randomTile;
+            if (evaluate(temp) >= evaluate(grid)) {
                 System.out.println("Random tile change made the board longer to solve!");
                 grid = temp;
             } else{
