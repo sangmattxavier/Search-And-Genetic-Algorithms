@@ -24,8 +24,7 @@ public class Main {
                 }
             }
 
-            BFS b = new BFS();
-            grid = b.BFS(grid);
+            grid = BFS.breadthFirstSearch(grid);
             if(grid[grid.length-1][grid.length-1].isVisited()){
                 System.out.println("good board found");
                 validGrid = true;

@@ -5,7 +5,7 @@ import java.util.*;
 
 public class BFS {
 
-    public Tile[][] BFS(Tile[][] grid) {
+    public static Tile[][] breadthFirstSearch(Tile[][] grid) {
 
         Tile t = grid[0][0];
         t.setMinimumDistance(0);
@@ -69,7 +69,7 @@ public class BFS {
         }
     }
 
-    public Tile[][] clearMinimumDistance(Tile[][] grid){
+    public static Tile[][] clearMinimumDistance(Tile[][] grid){
         for(int i = 0; i <grid.length; i++){
             for(int j = 0; j<grid.length; j++){
                 grid[i][j].setMinimumDistance(-1);
