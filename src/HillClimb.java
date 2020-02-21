@@ -58,6 +58,8 @@ public class HillClimb {
 
             BFS.printMinimumDistance(temp);
             BFS.printMinimumDistance(grid);
+            System.out.println("Temp eval: "+evaluate(temp));
+            System.out.println("Orig eval: "+evaluate(grid));
             if (evaluate(temp) > evaluate(grid)) {
                 System.out.println("Random tile change made the board longer to solve!");
                 grid = temp;
