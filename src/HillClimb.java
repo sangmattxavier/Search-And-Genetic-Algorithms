@@ -28,7 +28,15 @@ public class HillClimb {
 
     public Tile[][] hillClimb(int iterations, Tile[][] grid) {
         System.out.println("\n\nStarting Hill Climb");
-        Tile[][] temp = grid;
+        int originalGridValue = evaluate(grid);
+
+        Tile[][] temp  = new Tile[grid.length][grid.length];
+        for (int r = 0; r < grid.length; r++) {
+            temp[r] = grid[r].clone();
+        }
+        System.out.println(temp);
+        System.out.println(grid);
+
         for(int i = 0; i < iterations; i++) {
             int x = ThreadLocalRandom.current().nextInt(0, grid.length-1);
             int y = ThreadLocalRandom.current().nextInt(0, grid.length-1);
@@ -53,19 +61,15 @@ public class HillClimb {
             BFS b = new BFS();
             temp = b.clearMinimumDistance(temp);
             BFS.printMinimumDistance(temp);
-
             temp = b.BFS(temp);
-
             BFS.printMinimumDistance(temp);
             BFS.printMinimumDistance(grid);
-            System.out.println("Temp eval: "+evaluate(temp));
-            System.out.println("Orig eval: "+evaluate(grid));
-            if (evaluate(temp) > evaluate(grid)) {
+
+            if (evaluate(temp) > originalGridValue) {
                 System.out.println("Random tile change made the board longer to solve!");
                 grid = temp;
-            } else if (evaluate(temp) == evaluate(grid)) {
+            } else if (evaluate(temp) == originalGridValue) {
                 System.out.println("Random tile change made the board the same!");
-                grid = temp;
             }  else{
                 System.out.println("Random tile change made it simpler.");
             }
