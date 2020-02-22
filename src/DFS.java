@@ -26,10 +26,19 @@ public class DFS {
                 // traverse to detect unvisited children
                 for(int i = 0; i<t.getChildren().size(); i++){
                     System.out.println("Comparing counter: "+counter+" to min dist: "+t.getChildren().get(i).getMinimumDistance()+"\n"+!t.getChildren().get(i).isMinimumDistance(counter));
-                    if(!t.getChildren().get(i).isVisited()){
+                    if(!t.getChildren().get(i).isVisited() || (t.getChildren().get(i).isVisited() && (t.getMinimumDistance() + 1) < t.getChildren().get(i).getMinimumDistance())){
                         System.out.println("not visited: "+t.getChildren().get(i));
                         t = t.getChildren().get(i);
-                        t.setMinimumDistance(counter);
+
+                        if(!t.isVisited()) {
+                            t.setMinimumDistance(counter);
+                        } else if((t.isVisited() && (t.parent.getMinimumDistance() + 1) < t.getMinimumDistance())) {
+                            System.out.println("UNDER HERE");
+                            System.out.println(t.getMinimumDistance()+" REPLACED BOIII with: " + (t.parent.getMinimumDistance() + 1));
+                            System.out.println("Over HERE");
+
+                            t.setMinimumDistance(t.parent.getMinimumDistance() + 1);
+                        }
                     }
                 }
                 if(t==backup){ // all children visited, go back up
