@@ -49,4 +49,10 @@ public class GridController {
         }
         return grid;
     }
+
+    public static long getTimeDifference( long start){
+        long end = System.nanoTime();
+        long timeDifference = end - start;
+        return timeDifference;
+    }
 }

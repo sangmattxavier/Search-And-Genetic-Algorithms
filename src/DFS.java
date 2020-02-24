@@ -8,11 +8,12 @@ public class DFS {
     Stack<Tile> s = new Stack<>();
     int ctr = 0;
 
-    public Tile[][] realDFS(Tile[][] grid) {
+    public Tile[][] depthFirstSearch(Tile[][] grid) {
         Tile t = grid[0][0];
         t.setMinimumDistance(0);
         fillAllChildren(grid);
         shortestPath(t);
+
         return grid;
     }
 

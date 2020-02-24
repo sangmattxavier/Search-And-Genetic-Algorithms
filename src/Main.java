@@ -1,6 +1,5 @@
 import model.Tile;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -41,25 +40,39 @@ public class Main {
             System.out.println();
         }
 
+
+        // time stamps
+        long start;
+        long timeDifference;
+
         // print min distance board
         System.out.println("\n\nStarting BFS");
+        start = System.nanoTime();
         // grid = BFS.breadthFirstSearch(grid);
         GridController.printMinimumDistance(grid);
-        HillClimb hc = new HillClimb();
         System.out.println("The value of this grid using BFS is: " + GridController.evaluate(grid));
+        timeDifference = GridController.getTimeDifference(start);
+        System.out.println("BFS took " + timeDifference/1000000 + "ms");
 
         // Hill Climb
-        System.out.println("\n\nStarting Hill Climb");
-        grid = hc.hillClimb(100, grid);
-        GridController.printMinimumDistance(grid);
-        System.out.println("The value of this grid after Hill Climb is: " + GridController.evaluate(grid));
+//        System.out.println("\n\nStarting Hill Climb");
+//        start = System.nanoTime();
+//        HillClimb hc = new HillClimb();
+//        grid = hc.hillClimb(100, grid);
+//        GridController.printMinimumDistance(grid);
+//        System.out.println("The value of this grid after Hill Climb is: " + GridController.evaluate(grid));
+//        timeDifference = GridController.getTimeDifference(start);
+//        System.out.println("BFS took " + timeDifference/1000000 + "ms");
 
         // DFS
         System.out.println("\n\nStarting DFS using new board made from Hill Climb");
+        start = System.nanoTime();
         GridController.clearMinimumDistance(grid);
         DFS d = new DFS();
-        grid = d.realDFS(grid);
+        grid = d.depthFirstSearch(grid);
         GridController.printMinimumDistance(grid);
-        System.out.println("The value of this grid after Hill Climb is: " + GridController.evaluate(grid));
+        System.out.println("The value of this grid after DFS is: " + GridController.evaluate(grid));
+        timeDifference = GridController.getTimeDifference(start);
+        System.out.println("DFS took " + timeDifference/1000000 + "ms");
     }
 }

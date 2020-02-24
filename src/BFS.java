@@ -6,7 +6,6 @@ import java.util.*;
 public class BFS {
 
     public static Tile[][] breadthFirstSearch(Tile[][] grid) {
-
         Tile t = grid[0][0];
         t.setMinimumDistance(0);
         Queue<Tile> q = new LinkedList<>();
