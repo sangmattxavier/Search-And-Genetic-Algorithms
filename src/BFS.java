@@ -54,30 +54,4 @@ public class BFS {
         while(q.peek() != null);
         return grid;
     }
-
-    public static void printMinimumDistance(Tile[][] grid){
-        System.out.println();
-        for(int i = 0; i <grid.length; i++){
-            for(int j = 0; j<grid.length; j++){
-                if(grid[i][j].getMinimumDistance() == -1){
-                    System.out.print("X\t");
-                } else{
-                    System.out.print(grid[i][j].getMinimumDistance()+"\t");
-                }
-            }
-            System.out.println();
-        }
-    }
-
-    public static Tile[][] clearMinimumDistance(Tile[][] grid){
-        for(int i = 0; i <grid.length; i++){
-            for(int j = 0; j<grid.length; j++){
-                grid[i][j].setMinimumDistance(-1);
-                grid[i][j].setVisited(false);
-                grid[i][j].children.clear();
-                grid[i][j].parent = null;
-            }
-        }
-        return grid;
-    }
 }

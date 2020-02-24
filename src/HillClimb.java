@@ -18,7 +18,7 @@ public class HillClimb {
                 grid[x][y].setNumber(ThreadLocalRandom.current().nextInt(1, grid.length-1));
             }
             //System.out.println("NEW GRID NUM WENT FROM TEMP: "+ temp + "to " + grid[x][y].getNumber());
-            BFS.clearMinimumDistance(grid);
+            GridController.clearMinimumDistance(grid);
             BFS.breadthFirstSearch(grid);
             int newNum = GridController.evaluate(grid);
             if(newNum >= ogNum) {
@@ -30,7 +30,7 @@ public class HillClimb {
                 //System.out.println();
                 grid[x][y].setNumber(temp);
                 //System.out.println("TEMP WINS HERE: " + grid[x][y].getNumber());
-                BFS.clearMinimumDistance(grid);
+                GridController.clearMinimumDistance(grid);
                 BFS.breadthFirstSearch(grid);
             }
         }
