@@ -12,11 +12,11 @@ public class DFS {
         Tile t = grid[0][0];
         t.setMinimumDistance(0);
         fillAllChildren(grid);
-        shortestPath(t, grid);
+        shortestPath(t);
         return grid;
     }
 
-    public void shortestPath(Tile root, Tile[][] grid) {
+    public void shortestPath(Tile root) {
         System.out.println(s.toString());
         s.push(root);
         while (!s.isEmpty()) {
@@ -27,9 +27,7 @@ public class DFS {
                 if (!t.isVisited() || (t.isVisited() && (t.getParent().getMinimumDistance() + 1) < t.getMinimumDistance())) {
                     t.setMinimumDistance(curr.getMinimumDistance() + 1);
                     s.push(t);
-                    shortestPath(t, grid);
-                } else {
-                    continue;
+                    shortestPath(t);
                 }
             }
         }
