@@ -60,6 +60,8 @@ public class GridController {
         Tile t;
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid.length; j++) {
+
+                // TODO: CALL MANHATTAN DISTANCE METHOD FOR EACH CHILD
                 t = grid[i][j];
                 // Move up
                 if ((t.getyPosition() + t.getNumber()) < grid.length && !grid[t.getyPosition() + t.getNumber()][t.getxPosition()].isVisited()) {
@@ -85,7 +87,16 @@ public class GridController {
                 for (Tile tile : t.children) {
                     tile.parent = t;
                 }
+
+                //TODO: USE LAMBDA EXPRESSION TO SORT THE TILE.GETCHILDREN()
+                // LIST FROM LEAST TO GREAT MANHATTAN DISTANCE
             }
         }
+    }
+
+    public static int manhattanDistance(Tile curr, Tile goal){
+        int distance;
+        distance = Math.abs(curr.getxPosition() - goal.getxPosition()) + Math.abs(curr.getyPosition() - goal.getyPosition());
+        return distance;
     }
 }

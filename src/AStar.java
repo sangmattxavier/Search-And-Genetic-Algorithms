@@ -31,9 +31,4 @@ public class AStar {
             }
         }
     }
-
-    public int manhattanDistance(Tile curr, Tile goal){
-
-        return 0;
-    }
 }

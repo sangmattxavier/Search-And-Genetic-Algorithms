@@ -7,6 +7,7 @@ public class Tile {
     private int number;
     private int yPos;
     private int xPos;
+    private int manhattanDistance;
     public Tile parent;
     public Tile next;
     public ArrayList<Tile> children = new ArrayList<>();
