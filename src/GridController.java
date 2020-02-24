@@ -55,4 +55,37 @@ public class GridController {
         long timeDifference = end - start;
         return timeDifference;
     }
+
+    public static void fillAllChildren(Tile[][] grid) {
+        Tile t;
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid.length; j++) {
+                t = grid[i][j];
+                // Move up
+                if ((t.getyPosition() + t.getNumber()) < grid.length && !grid[t.getyPosition() + t.getNumber()][t.getxPosition()].isVisited()) {
+                    Tile up = grid[t.getyPosition() + t.getNumber()][t.getxPosition()];
+                    t.children.add(up);
+                }
+                // Move down
+                if ((t.getyPosition() - t.getNumber()) > -1 && !grid[t.getyPosition() - t.getNumber()][t.getxPosition()].isVisited()) {
+                    Tile down = grid[t.getyPosition() - t.getNumber()][t.getxPosition()];
+                    t.children.add(down);
+                    //System.out.println("DOWN ADDED");
+                }
+                // Move right
+                if ((t.getxPosition() + t.getNumber()) < grid.length && !grid[t.getyPosition()][t.getxPosition() + t.getNumber()].isVisited()) {
+                    Tile right = grid[t.getyPosition()][t.getxPosition() + t.getNumber()];
+                    t.children.add(right);
+                }
+                // Move left
+                if ((t.getxPosition() - t.getNumber()) > -1 && !grid[t.getyPosition()][t.getxPosition() - t.getNumber()].isVisited()) {
+                    Tile left = grid[t.getyPosition()][t.getxPosition() - t.getNumber()];
+                    t.children.add(left);
+                }
+                for (Tile tile : t.children) {
+                    tile.parent = t;
+                }
+            }
+        }
+    }
 }
