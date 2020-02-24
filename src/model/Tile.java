@@ -21,6 +21,14 @@ public class Tile {
         this.children = children;
     }
 
+    public Tile getParent() {
+        return this.parent;
+    }
+
+    public void setParent(Tile t) {
+        this.parent = t;
+    }
+
     public int getMinimumDistance() {
         return minimumDistance;
     }
