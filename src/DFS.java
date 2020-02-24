@@ -17,7 +17,7 @@ public class DFS {
     }
 
     public void shortestPath(Tile root) {
-        System.out.println(s.toString());
+        //System.out.println(s.toString());
         s.push(root);
         while (!s.isEmpty()) {
             Tile curr = s.pop();

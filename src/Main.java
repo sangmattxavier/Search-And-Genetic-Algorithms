@@ -42,26 +42,23 @@ public class Main {
         }
 
         // print min distance board
+        System.out.println("\n\nStarting BFS");
         BFS.printMinimumDistance(grid);
         HillClimb hc = new HillClimb();
-        System.out.println("The value of this grid is: " + hc.evaluate(grid));
+        System.out.println("The value of this grid using BFS is: " + hc.evaluate(grid));
 
         // Hill Climb
-//        grid = hc.hillClimb(100, grid);
-//        BFS.printMinimumDistance(grid);
-//        System.out.println("The value of this grid after Hill Climb is: " + hc.evaluate(grid));
-
-        // print regular board
-        BFS.clearMinimumDistance(grid);
-        for(int i = 0; i <max; i++){
-            for(int j = 0; j<max; j++){
-                System.out.print(grid[i][j]+"\t");
-            }
-            System.out.println();
-        }
+        System.out.println("\n\nStarting Hill Climb");
+        grid = hc.hillClimb(100, grid);
+        BFS.printMinimumDistance(grid);
+        System.out.println("The value of this grid after Hill Climb is: " + hc.evaluate(grid));
+        
         // DFS
+        System.out.println("\n\nStarting DFS using new board made from Hill Climb");
+        BFS.clearMinimumDistance(grid);
         DFS d = new DFS();
         grid = d.realDFS(grid);
         BFS.printMinimumDistance(grid);
+        System.out.println("The value of this grid after Hill Climb is: " + hc.evaluate(grid));
     }
 }
