@@ -47,10 +47,18 @@ public class Tile {
         }
     }
 
+    public int getManhattanDistance() {
+        return this.manhattanDistance;
+    }
+
+    public void setManhattanDistance(int d) {
+        this.manhattanDistance = d;
+    }
+
     public Tile(int xPos, int yPos, int arraySize) {
         this.xPos = xPos;
         this.yPos = yPos;
-        this.number = ThreadLocalRandom.current().nextInt(1, arraySize);
+        this.number = 1;//ThreadLocalRandom.current().nextInt(1, arraySize);
     }
 
     public boolean isVisited() {

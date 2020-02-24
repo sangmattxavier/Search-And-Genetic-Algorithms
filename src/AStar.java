@@ -1,5 +1,7 @@
 import model.Tile;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Stack;
 
 public class AStar {
@@ -8,7 +10,6 @@ public class AStar {
     public Tile[][] manhattanAStar(Tile[][] grid){
         Tile t = grid[0][0];
         t.setMinimumDistance(0);
-        GridController.fillAllChildren(grid);
         shortestPath(t);
 
 

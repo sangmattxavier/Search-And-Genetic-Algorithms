@@ -11,7 +11,6 @@ public class DFS {
     public Tile[][] depthFirstSearch(Tile[][] grid) {
         Tile t = grid[0][0];
         t.setMinimumDistance(0);
-        GridController.fillAllChildren(grid);
         shortestPath(t);
 
         return grid;

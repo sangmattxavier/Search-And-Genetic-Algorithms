@@ -48,7 +48,7 @@ public class Main {
         // print min distance board
         System.out.println("\n\nStarting BFS");
         start = System.nanoTime();
-        // grid = BFS.breadthFirstSearch(grid);
+        grid = BFS.breadthFirstSearch(grid);
         GridController.printMinimumDistance(grid);
         System.out.println("The value of this grid using BFS is: " + GridController.evaluate(grid));
         timeDifference = GridController.getTimeDifference(start);
@@ -64,26 +64,29 @@ public class Main {
 //        timeDifference = GridController.getTimeDifference(start);
 //        System.out.println("BFS took " + timeDifference/1000000 + "ms");
 
-        // DFS
-        System.out.println("\n\nStarting DFS");
-        start = System.nanoTime();
-        GridController.clearMinimumDistance(grid);
-        DFS d = new DFS();
-        grid = d.depthFirstSearch(grid);
-        GridController.printMinimumDistance(grid);
-        System.out.println("The value of this grid after DFS is: " + GridController.evaluate(grid));
-        timeDifference = GridController.getTimeDifference(start);
-        System.out.println("DFS took " + timeDifference/1000000 + "ms");
 
         // AStar
         System.out.println("\n\nStarting AStar");
-        start = System.nanoTime();
         GridController.clearMinimumDistance(grid);
+        GridController.fillAllChildrenAStar(grid);
         AStar a = new AStar();
+        start = System.nanoTime();
         grid = a.manhattanAStar(grid);
         GridController.printMinimumDistance(grid);
         System.out.println("The value of this grid after AStar is: " + GridController.evaluate(grid));
         timeDifference = GridController.getTimeDifference(start);
         System.out.println("AStar took " + timeDifference/1000000 + "ms");
+
+        // DFS
+        System.out.println("\n\nStarting DFS");
+        GridController.clearMinimumDistance(grid);
+        GridController.fillAllChildren(grid);
+        DFS d = new DFS();
+        start = System.nanoTime();
+        grid = d.depthFirstSearch(grid);
+        GridController.printMinimumDistance(grid);
+        System.out.println("The value of this grid after DFS is: " + GridController.evaluate(grid));
+        timeDifference = GridController.getTimeDifference(start);
+        System.out.println("DFS took " + timeDifference/1000000 + "ms");
     }
 }

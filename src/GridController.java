@@ -1,5 +1,8 @@
 import model.Tile;
 
+import java.util.Collections;
+import java.util.Comparator;
+
 public class GridController {
     public static int evaluate(Tile[][] grid){
 //        System.out.println();
@@ -56,6 +59,45 @@ public class GridController {
         return timeDifference;
     }
 
+    public static void fillAllChildrenAStar(Tile[][] grid) {
+        Tile t;
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid.length; j++) {
+
+                // TODO: CALL MANHATTAN DISTANCE METHOD FOR EACH CHILD
+                t = grid[i][j];
+                // Move up
+                if ((t.getyPosition() + t.getNumber()) < grid.length && !grid[t.getyPosition() + t.getNumber()][t.getxPosition()].isVisited()) {
+                    Tile up = grid[t.getyPosition() + t.getNumber()][t.getxPosition()];
+                    t.children.add(up);
+                }
+                // Move down
+                if ((t.getyPosition() - t.getNumber()) > -1 && !grid[t.getyPosition() - t.getNumber()][t.getxPosition()].isVisited()) {
+                    Tile down = grid[t.getyPosition() - t.getNumber()][t.getxPosition()];
+                    t.children.add(down);
+                    //System.out.println("DOWN ADDED");
+                }
+                // Move right
+                if ((t.getxPosition() + t.getNumber()) < grid.length && !grid[t.getyPosition()][t.getxPosition() + t.getNumber()].isVisited()) {
+                    Tile right = grid[t.getyPosition()][t.getxPosition() + t.getNumber()];
+                    t.children.add(right);
+                }
+                // Move left
+                if ((t.getxPosition() - t.getNumber()) > -1 && !grid[t.getyPosition()][t.getxPosition() - t.getNumber()].isVisited()) {
+                    Tile left = grid[t.getyPosition()][t.getxPosition() - t.getNumber()];
+                    t.children.add(left);
+                }
+                for (Tile tile : t.children) {
+                    tile.parent = t;
+                    manhattanDistance(t, grid[grid.length-1][grid.length-1]);
+                }
+                Collections.sort(t.children, Comparator.comparingInt(Tile::getManhattanDistance));
+                //TODO: USE LAMBDA EXPRESSION TO SORT THE TILE.GETCHILDREN()
+                // LIST FROM LEAST TO GREAT MANHATTAN DISTANCE
+            }
+        }
+    }
+
     public static void fillAllChildren(Tile[][] grid) {
         Tile t;
         for (int i = 0; i < grid.length; i++) {
@@ -86,17 +128,17 @@ public class GridController {
                 }
                 for (Tile tile : t.children) {
                     tile.parent = t;
+                    manhattanDistance(t, grid[grid.length-1][grid.length-1]);
                 }
-
                 //TODO: USE LAMBDA EXPRESSION TO SORT THE TILE.GETCHILDREN()
                 // LIST FROM LEAST TO GREAT MANHATTAN DISTANCE
             }
         }
     }
 
-    public static int manhattanDistance(Tile curr, Tile goal){
+    public static void manhattanDistance(Tile curr, Tile goal){
         int distance;
-        distance = Math.abs(curr.getxPosition() - goal.getxPosition()) + Math.abs(curr.getyPosition() - goal.getyPosition());
-        return distance;
+        curr.setManhattanDistance(Math.abs(curr.getxPosition() - goal.getxPosition()) + Math.abs(curr.getyPosition() - goal.getyPosition()));
+        //return distance;
     }
 }
