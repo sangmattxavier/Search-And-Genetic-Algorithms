@@ -58,7 +58,7 @@ public class Tile {
     public Tile(int xPos, int yPos, int arraySize) {
         this.xPos = xPos;
         this.yPos = yPos;
-        this.number = 1;//ThreadLocalRandom.current().nextInt(1, arraySize);
+        this.number = ThreadLocalRandom.current().nextInt(1, arraySize);
     }
 
     public boolean isVisited() {

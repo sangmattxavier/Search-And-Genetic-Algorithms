@@ -65,6 +65,7 @@ public class Main {
 //        System.out.println("BFS took " + timeDifference/1000000 + "ms");
 
 
+
         // AStar
         System.out.println("\n\nStarting AStar");
         GridController.clearMinimumDistance(grid);
@@ -75,7 +76,7 @@ public class Main {
         GridController.printMinimumDistance(grid);
         System.out.println("The value of this grid after AStar is: " + GridController.evaluate(grid));
         timeDifference = GridController.getTimeDifference(start);
-        System.out.println("AStar took " + timeDifference/1000000 + "ms");
+        System.out.println("AStar took " + timeDifference/100 + "ms");
 
         // DFS
         System.out.println("\n\nStarting DFS");
@@ -87,6 +88,7 @@ public class Main {
         GridController.printMinimumDistance(grid);
         System.out.println("The value of this grid after DFS is: " + GridController.evaluate(grid));
         timeDifference = GridController.getTimeDifference(start);
-        System.out.println("DFS took " + timeDifference/1000000 + "ms");
+        System.out.println("DFS took " + timeDifference/100 + "ms");
+
     }
 }
