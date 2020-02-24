@@ -4,33 +4,10 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class HillClimb {
 
-    public int evaluate(Tile[][] grid){
-//        System.out.println();
-        int k = 0;
-        int value;
-        for(int i = 0; i <grid.length; i++){
-            for(int j = 0; j<grid.length; j++){
-                if(grid[i][j].getMinimumDistance() == -1){
-//                    System.out.print("X\t");
-                    k--;
-                } else{
-//                    System.out.print(grid[i][j].getMinimumDistance()+"\t");
-                }
-            }
-//            System.out.println();
-        }
-        if (grid[grid.length-1][grid.length-1].getMinimumDistance() == -1) {
-            value = k;
-        } else {
-            value = grid[grid.length-1][grid.length-1].getMinimumDistance();
-        }
-        return value;
-    }
-
     public Tile[][] hillClimb(int iterations, Tile[][] grid) {
 
         for(int i = 0; i < iterations; i++) {
-            int ogNum = evaluate(grid);
+            int ogNum = GridController.evaluate(grid);
             int x = ThreadLocalRandom.current().nextInt(0, grid.length-1);
             int y = ThreadLocalRandom.current().nextInt(0, grid.length-1);
 
@@ -43,7 +20,7 @@ public class HillClimb {
             //System.out.println("NEW GRID NUM WENT FROM TEMP: "+ temp + "to " + grid[x][y].getNumber());
             BFS.clearMinimumDistance(grid);
             BFS.breadthFirstSearch(grid);
-            int newNum = evaluate(grid);
+            int newNum = GridController.evaluate(grid);
             if(newNum >= ogNum) {
                 //System.out.println("FOUND A NEW NUM IS BIGGER: " + newNum + " vs OLD NUM: " + ogNum);
                 continue;
