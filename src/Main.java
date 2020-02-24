@@ -65,7 +65,7 @@ public class Main {
 //        System.out.println("BFS took " + timeDifference/1000000 + "ms");
 
         // DFS
-        System.out.println("\n\nStarting DFS using new board made from Hill Climb");
+        System.out.println("\n\nStarting DFS");
         start = System.nanoTime();
         GridController.clearMinimumDistance(grid);
         DFS d = new DFS();
@@ -74,5 +74,16 @@ public class Main {
         System.out.println("The value of this grid after DFS is: " + GridController.evaluate(grid));
         timeDifference = GridController.getTimeDifference(start);
         System.out.println("DFS took " + timeDifference/1000000 + "ms");
+
+        // AStar
+        System.out.println("\n\nStarting AStar");
+        start = System.nanoTime();
+        GridController.clearMinimumDistance(grid);
+        AStar a = new AStar();
+        grid = a.manhattanAStar(grid);
+        GridController.printMinimumDistance(grid);
+        System.out.println("The value of this grid after AStar is: " + GridController.evaluate(grid));
+        timeDifference = GridController.getTimeDifference(start);
+        System.out.println("AStar took " + timeDifference/1000000 + "ms");
     }
 }
