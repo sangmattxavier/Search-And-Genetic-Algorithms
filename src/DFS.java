@@ -14,7 +14,6 @@ public class DFS {
     int ctr = 0;
 
     public void depthFirstSearch(Tile[][] grid) {
-        totalGoalsTime = 0;
         start = System.nanoTime();
         Tile t = grid[0][0];
         t.setMinimumDistance(0);
@@ -34,8 +33,9 @@ public class DFS {
                 goalReached = true;
                 long end = System.nanoTime();
                 long timeDifference = end - start;
-                totalGoalsTime = totalGoalsTime + timeDifference;
+                totalGoalsTime = totalGoalsTime + timeDifference/100;
                 System.out.println("DFS found path to goal at "+timeDifference/100+": "+firstPath.toString());
+                System.out.println("DFS Total Goals Time: "+totalGoalsTime);
             }
             curr.setVisited(true);
             for (Tile t : curr.getChildren()) {

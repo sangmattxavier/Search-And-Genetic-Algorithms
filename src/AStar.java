@@ -10,7 +10,6 @@ public class AStar {
     static long totalGoalsTime;
 
     public void manhattanAStar(Tile[][] grid){
-        totalGoalsTime = 0;
         start = System.nanoTime();
         Tile t = grid[0][0];
         t.setMinimumDistance(0);
@@ -31,8 +30,9 @@ public class AStar {
                 goalReached = true;
                 long end = System.nanoTime();
                 long timeDifference = end - start;
-                totalGoalsTime = totalGoalsTime + timeDifference;
+                totalGoalsTime = totalGoalsTime + timeDifference/100;
                 System.out.println("AStar found path to goal at "+timeDifference/100+": "+firstPath.toString());
+                System.out.println("AStar Total Goals Time: "+totalGoalsTime);
             }
             curr.setVisited(true);
             for (Tile t : curr.getChildren()) {
