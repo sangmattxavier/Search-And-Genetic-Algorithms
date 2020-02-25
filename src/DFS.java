@@ -8,7 +8,7 @@ public class DFS {
     List<Tile> firstPath = new ArrayList<>();
     boolean goalReached = false;
     long start;
-    long timeDifference;
+    static long totalGoalsTime;
 
     Stack<Tile> s = new Stack<>();
     int ctr = 0;
@@ -34,6 +34,7 @@ public class DFS {
                 // found first time goal was reached, save the path
                 firstPath.addAll(s);
                 goalReached = true;
+                totalGoalsTime = totalGoalsTime + GridController.getTimeDifference(start);
             }
             curr.setVisited(true);
             for (Tile t : curr.getChildren()) {

@@ -6,6 +6,8 @@ public class AStar {
     List<Tile> firstPath = new ArrayList<>();
     boolean goalReached = false;
     Stack<Tile> s = new Stack<>();
+    long start;
+    static long totalGoalsTime;
 
     public Tile[][] manhattanAStar(Tile[][] grid){
         Tile t = grid[0][0];
@@ -20,6 +22,7 @@ public class AStar {
 
     public void shortestPath(Tile root, Tile[][] grid) {
         //System.out.println(s.toString());
+        start = System.nanoTime();
         s.push(root);
         while (!s.isEmpty()) {
             Tile curr = s.pop();
@@ -27,6 +30,7 @@ public class AStar {
                 // found first time goal was reached, save the path for AStar
                 firstPath.addAll(s);
                 goalReached = true;
+                totalGoalsTime = totalGoalsTime + GridController.getTimeDifference(start);
             }
             curr.setVisited(true);
             for (Tile t : curr.getChildren()) {

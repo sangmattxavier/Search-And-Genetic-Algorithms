@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b821560f-64ad-4751-9571-a365468fb29c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Search-And-Genetic-Algorithms/AStar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Search-And-Genetic-Algorithms/AStar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Search-And-Genetic-Algorithms/DFS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Search-And-Genetic-Algorithms/DFS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Search-And-Genetic-Algorithms/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Search-And-Genetic-Algorithms/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Search-And-Genetic-Algorithms/model/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Search-And-Genetic-Algorithms/model/Tile.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AStar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AStar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DFS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Tile.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +19,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-305">
-                  <caret line="44" column="20" selection-start-line="44" selection-end-line="45" />
+                <state relative-caret-position="475">
+                  <caret line="96" column="77" selection-start-line="96" selection-start-column="77" selection-end-line="96" selection-end-column="77" />
                 </state>
               </provider>
             </entry>
@@ -83,20 +77,20 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/DFS.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="360">
-                  <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+                <state relative-caret-position="424">
+                  <caret line="36" column="47" selection-start-line="36" selection-end-line="37" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/AStar.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="284">
-                  <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+                <state relative-caret-position="449">
+                  <caret line="32" column="90" selection-start-line="32" selection-start-column="90" selection-end-line="32" selection-end-column="90" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -134,9 +128,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/model/Tile.java" />
-        <option value="$PROJECT_DIR$/src/AStar.java" />
         <option value="$PROJECT_DIR$/src/DFS.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/AStar.java" />
       </list>
     </option>
   </component>
@@ -179,7 +173,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1582591534196" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1582592422060" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
@@ -231,7 +225,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3537000" />
+    <option name="totallyTimeSpent" value="3874000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -329,16 +323,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AStar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-9.0.4.jdk/Contents/Home/lib/src.zip!/java.base/java/io/PrintStream.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
@@ -346,17 +330,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DFS.java">
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+        <state relative-caret-position="475">
+          <caret line="96" column="77" selection-start-line="96" selection-start-column="77" selection-end-line="96" selection-end-column="77" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/DFS.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-305">
-          <caret line="44" column="20" selection-start-line="44" selection-end-line="45" />
+        <state relative-caret-position="424">
+          <caret line="36" column="47" selection-start-line="36" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AStar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="32" column="90" selection-start-line="32" selection-start-column="90" selection-end-line="32" selection-end-column="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

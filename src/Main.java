@@ -94,6 +94,9 @@ public class Main {
 
         System.out.println("Average BFS: "+BFSavg/algCap+ "ms");
         System.out.println("Average AStar: "+AStarAvg/algCap+ "ms");
+        System.out.println("\tAverage time for reach goal first time: "+AStar.totalGoalsTime/algCap+"ms");
         System.out.println("Average DFS: "+DFSavg/algCap+ "ms");
+        System.out.println("\tAverage time for reach goal first time: "+DFS.totalGoalsTime/algCap+"ms");
+
     }
 }
