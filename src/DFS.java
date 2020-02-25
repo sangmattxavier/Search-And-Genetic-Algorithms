@@ -13,7 +13,7 @@ public class DFS {
     Stack<Tile> s = new Stack<>();
     int ctr = 0;
 
-    public Tile[][] depthFirstSearch(Tile[][] grid) {
+    public void depthFirstSearch(Tile[][] grid) {
         Tile t = grid[0][0];
         t.setMinimumDistance(0);
         shortestPath(t, grid);
@@ -21,7 +21,7 @@ public class DFS {
         if(goalReached){
             System.out.println("DFS found path to goal:"+firstPath.toString());
         }
-        return grid;
+//        return grid;
     }
 
     public void shortestPath(Tile root, Tile[][] grid) {

@@ -9,7 +9,7 @@ public class AStar {
     long start;
     static long totalGoalsTime;
 
-    public Tile[][] manhattanAStar(Tile[][] grid){
+    public void manhattanAStar(Tile[][] grid){
         Tile t = grid[0][0];
         t.setMinimumDistance(0);
         shortestPath(t, grid);
@@ -17,7 +17,7 @@ public class AStar {
         if(goalReached){
             System.out.println("AStar found path to goal:"+firstPath.toString());
         }
-        return grid;
+//        return grid;
     }
 
     public void shortestPath(Tile root, Tile[][] grid) {
