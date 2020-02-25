@@ -27,10 +27,9 @@ public class Main {
                     grid[i][j]=t;
                 }
             }
-
-        runBFS(grid);
-        runDFS(grid);
-        runAStar(grid);
+            runBFS(grid, k);
+            runDFS(grid, k);
+            runAStar(grid, k);
 
 
 //        // print regular board
@@ -66,7 +65,7 @@ public class Main {
 
     }
 
-    public static void runBFS(Tile[][] grid){
+    public static void runBFS(Tile[][] grid, int k){
 
         // BFS
         System.out.println("\n\nStarting BFS");
@@ -83,7 +82,7 @@ public class Main {
 
     }
 
-    public static void runDFS(Tile[][] grid){
+    public static void runDFS(Tile[][] grid, int k){
 
         // DFS
         System.out.println("\n\nStarting DFS");
@@ -93,19 +92,23 @@ public class Main {
         Tile[][] DFSgrid = grid.clone();
         GridController.fillAllChildren(DFSgrid);
         long start1 = System.nanoTime();
+        System.out.println("START: "+start1/100);
         System.out.println(DFSgrid+" vs "+grid);
         d.depthFirstSearch(DFSgrid);
         long end1 = System.nanoTime();
+        System.out.println("END: "+end1/100);
         long timeDifference1 = end1 - start1;
+        System.out.println("DIFFERENCE: "+timeDifference1/100);
         System.out.println("DFS took " + timeDifference1/100 + "ms");
-        DFSavg = DFSavg + timeDifference1/100;
-
+        if(k == 0) {
+            DFSavg = DFSavg + timeDifference1 / 100;
+        }
         //GridController.printMinimumDistance(DFSgrid);
         System.out.println("The value of this grid after DFS is: " + GridController.evaluate(DFSgrid));
 
     }
 
-    public static void runAStar(Tile[][] grid){
+    public static void runAStar(Tile[][] grid, int k){
         // AStar
         System.out.println("\n\nStarting AStar");
         GridController.clearMinimumDistance(grid);
@@ -114,13 +117,17 @@ public class Main {
         Tile[][] AStarGrid = grid.clone();
         GridController.fillAllChildrenAStar(AStarGrid);
         long start2 = System.nanoTime();
+        System.out.println("START: "+start2/100);
         System.out.println(AStarGrid+" vs "+grid);
         a.manhattanAStar(AStarGrid);
         long end2 = System.nanoTime();
+        System.out.println("END: "+end2/100);
         long timeDifference2 = end2 - start2;
+        System.out.println("DIFFERENCE: "+timeDifference2/100);
         System.out.println("AStar took " + timeDifference2/100 + "ms");
-        AStarAvg = AStarAvg + timeDifference2/100;
-
+        if(k == 0){
+            AStarAvg = AStarAvg + timeDifference2/100;
+        }
         //GridController.printMinimumDistance(AStarGrid);
         System.out.println("The value of this grid after AStar is: " + GridController.evaluate(AStarGrid));
 
