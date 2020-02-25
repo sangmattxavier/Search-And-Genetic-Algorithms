@@ -14,7 +14,7 @@ public class Main {
         // time stamps
         long start;
         long timeDifference;
-        int algCap = 50;
+        int algCap = 10;
         long BFSavg = 0;
         long DFSavg = 0;
         long AStarAvg = 0;
@@ -71,13 +71,13 @@ public class Main {
             AStar a = new AStar();
 
             start = System.nanoTime();
-            Tile[][] AStartGrid = a.manhattanAStar(grid);
+            Tile[][] AStarGrid = a.manhattanAStar(grid);
             timeDifference = GridController.getTimeDifference(start);
             System.out.println("AStar took " + timeDifference/100 + "ms");
             AStarAvg = AStarAvg + timeDifference/100;
 
-            //GridController.printMinimumDistance(AStartGrid);
-            System.out.println("The value of this grid after AStar is: " + GridController.evaluate(AStartGrid));
+            //GridController.printMinimumDistance(AStarGrid);
+            System.out.println("The value of this grid after AStar is: " + GridController.evaluate(AStarGrid));
 
 //        // Hill Climb
 //        System.out.println("\n\nStarting Hill Climb");
@@ -90,8 +90,12 @@ public class Main {
 //        System.out.println("The value of this grid after Hill Climb is: " + GridController.evaluate(grid));
 
             System.out.println("-----------------------------------");
+            System.out.println("Grid Length: "+grid.length);
+            System.out.println("Function Value: "+GridController.evaluate(grid));
+            System.out.println();
         }
 
+        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("Average BFS: "+BFSavg/algCap+ "ms");
         System.out.println("Average AStar: "+AStarAvg/algCap+ "ms");
         System.out.println("\tAverage time for reach goal first time: "+AStar.totalGoalsTime/algCap+"ms");
@@ -99,4 +103,6 @@ public class Main {
         System.out.println("\tAverage time for reach goal first time: "+DFS.totalGoalsTime/algCap+"ms");
 
     }
+
+
 }
