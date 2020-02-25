@@ -8,8 +8,7 @@ To Test DFS, BFS, HillClimb, A Star - Manhattan Distance
 
 <br>
 
-<!--<img width=40% align="right" src="https://github.com/sangmattxavier/Search-And-Genetic-Algorithms/blob/master/assignment/demo.png
-"> -->
+<img width=40% align="right" src="https://github.com/sangmattxavier/Search-And-Genetic-Algorithms/blob/master/assignment/demo.png">
 
 ## Current Main Features
 - Create project / team
