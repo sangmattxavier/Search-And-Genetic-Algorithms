@@ -98,8 +98,8 @@ public class Tile {
     }
 
     public String toString(){
-//        return this.number + "(" + this.xPos + ", " + this.yPos + ")";
-        return Integer.toString(this.number);
+        return this.number + "(" + this.xPos + ", " + this.yPos + ")";
+        //return Integer.toString(this.number);
     }
 
 }
