@@ -32,7 +32,7 @@ public class AStar {
                 long timeDifference = end - start;
                 totalGoalsTime = totalGoalsTime + timeDifference/100;
                 System.out.println("AStar found path to goal at "+timeDifference/100+": "+firstPath.toString());
-                System.out.println("AStar Total Goals Time: "+totalGoalsTime);
+                //System.out.println("AStar Total Goals Time: "+totalGoalsTime);
             }
             curr.setVisited(true);
             for (Tile t : curr.getChildren()) {
