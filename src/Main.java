@@ -100,7 +100,7 @@ public class Main {
         long timeDifference1 = end1 - start1;
         System.out.println("DIFFERENCE: "+timeDifference1/100);
         System.out.println("DFS took " + timeDifference1/100 + "ms");
-        if(k == 0) {
+        if(k != 0) {
             DFSavg = DFSavg + timeDifference1 / 100;
         }
         //GridController.printMinimumDistance(DFSgrid);
@@ -125,7 +125,7 @@ public class Main {
         long timeDifference2 = end2 - start2;
         System.out.println("DIFFERENCE: "+timeDifference2/100);
         System.out.println("AStar took " + timeDifference2/100 + "ms");
-        if(k == 0){
+        if(k != 0){
             AStarAvg = AStarAvg + timeDifference2/100;
         }
         //GridController.printMinimumDistance(AStarGrid);
