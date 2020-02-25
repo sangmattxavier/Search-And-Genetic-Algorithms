@@ -14,19 +14,17 @@ public class DFS {
     int ctr = 0;
 
     public void depthFirstSearch(Tile[][] grid) {
+        totalGoalsTime = 0;
+        start = System.nanoTime();
         Tile t = grid[0][0];
         t.setMinimumDistance(0);
         shortestPath(t, grid);
 
-        if(goalReached){
-            System.out.println("DFS found path to goal:"+firstPath.toString());
-        }
 //        return grid;
     }
 
     public void shortestPath(Tile root, Tile[][] grid) {
         //System.out.println(s.toString());
-        start = System.nanoTime();
         s.push(root);
         while (!s.isEmpty()) {
             Tile curr = s.pop();
@@ -34,7 +32,10 @@ public class DFS {
                 // found first time goal was reached, save the path
                 firstPath.addAll(s);
                 goalReached = true;
-                totalGoalsTime = totalGoalsTime + GridController.getTimeDifference(start);
+                long end = System.nanoTime();
+                long timeDifference = end - start;
+                totalGoalsTime = totalGoalsTime + timeDifference;
+                System.out.println("DFS found path to goal at "+totalGoalsTime+": "+firstPath.toString());
             }
             curr.setVisited(true);
             for (Tile t : curr.getChildren()) {
