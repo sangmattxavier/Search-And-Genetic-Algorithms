@@ -35,7 +35,7 @@ public class DFS {
                 long end = System.nanoTime();
                 long timeDifference = end - start;
                 totalGoalsTime = totalGoalsTime + timeDifference;
-                System.out.println("DFS found path to goal at "+totalGoalsTime+": "+firstPath.toString());
+                System.out.println("DFS found path to goal at "+timeDifference/100+": "+firstPath.toString());
             }
             curr.setVisited(true);
             for (Tile t : curr.getChildren()) {
