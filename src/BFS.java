@@ -54,6 +54,7 @@ public class BFS {
                             pathToGoal.add(temp.parent);
                             temp = temp.parent;
                         }
+                        Collections.reverse(pathToGoal);
                         System.out.println(pathToGoal);
                         pathToGoal.clear();
                     }
