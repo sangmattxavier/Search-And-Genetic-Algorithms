@@ -41,6 +41,22 @@ public class BFS {
                     tile.setVisited(true);
                     tile.parent = t;
                     tile.setMinimumDistance(tile.parent.getMinimumDistance()+1);
+
+                    if(tile.getxPosition() == grid.length -1 && tile.getyPosition() == grid.length - 1){
+                        System.out.println("BFS found path to goal: ");
+                        Tile temp = tile;
+                        List<Tile> pathToGoal = new ArrayList<>();
+                        pathToGoal.add(temp);
+                        while(true){
+                            if(temp.getxPosition() == 0 && temp.getyPosition() == 0){
+                                break;
+                            }
+                            pathToGoal.add(temp.parent);
+                            temp = temp.parent;
+                        }
+                        System.out.println(pathToGoal);
+                        pathToGoal.clear();
+                    }
                 }
 
                 q.remove();

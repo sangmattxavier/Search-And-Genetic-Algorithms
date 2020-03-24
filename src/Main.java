@@ -56,6 +56,13 @@ public class Main {
 
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------");
         runHillClimb(grid);
+        System.out.println("NEW BOARD");
+        for(int i = 0; i <max; i++){
+            for(int j = 0; j<max; j++){
+                System.out.print(grid[i][j]+"\t");
+            }
+            System.out.println();
+        }
     }
 
     public static void runBFS(Tile[][] grid, int k){

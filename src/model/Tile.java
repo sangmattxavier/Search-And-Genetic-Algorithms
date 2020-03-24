@@ -8,7 +8,7 @@ public class Tile {
     private int yPos;
     private int xPos;
     private int manhattanDistance;
-    public Tile parent;
+    public Tile parent = null;
     public Tile next;
     public ArrayList<Tile> children = new ArrayList<>();
     private boolean visited = false;
