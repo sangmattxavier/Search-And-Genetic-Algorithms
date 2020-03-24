@@ -76,7 +76,8 @@ public class Main {
             Tile[][] BFSgrid = BFS.breadthFirstSearch(grid);
             long end0 = System.nanoTime();
             long timeDifference0 = end0 - start0;
-            System.out.println("BFS took " + timeDifference0/100 + "ms");
+            if (k > 0)
+                System.out.println("BFS took " + timeDifference0/100 + "ms");
             BFSavg = BFSavg + timeDifference0/100;
 
             GridController.printMinimumDistance(BFSgrid);
@@ -104,7 +105,8 @@ public class Main {
             //System.out.println("END: "+end1/100);
             long timeDifference1 = end1 - start1;
             //System.out.println("DIFFERENCE: "+timeDifference1/100);
-            System.out.println("DFS took " + timeDifference1 / 100 + "ms");
+            if (k > 0)
+                System.out.println("DFS took " + timeDifference1 / 100 + "ms");
             if (k != 0) {
                 DFSavg = DFSavg + timeDifference1 / 100;
             }
@@ -131,7 +133,8 @@ public class Main {
             //System.out.println("END: "+end2/100);
             long timeDifference2 = end2 - start2;
             //System.out.println("DIFFERENCE: "+timeDifference2/100);
-            System.out.println("AStar took " + timeDifference2 / 100 + "ms");
+            if (k > 0)
+                System.out.println("AStar took " + timeDifference2 / 100 + "ms");
             if (k != 0) {
                 AStarAvg = AStarAvg + timeDifference2 / 100;
             }
