@@ -64,7 +64,6 @@ public class GridController {
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid.length; j++) {
 
-                // TODO: CALL MANHATTAN DISTANCE METHOD FOR EACH CHILD
                 t = grid[i][j];
                 // Move up
                 if ((t.getyPosition() + t.getNumber()) < grid.length && !grid[t.getyPosition() + t.getNumber()][t.getxPosition()].isVisited()) {
@@ -92,8 +91,6 @@ public class GridController {
                     manhattanDistance(t, grid[grid.length-1][grid.length-1]);
                 }
                 Collections.sort(t.children, Comparator.comparingInt(Tile::getManhattanDistance));
-                //TODO: USE LAMBDA EXPRESSION TO SORT THE TILE.GETCHILDREN()
-                // LIST FROM LEAST TO GREAT MANHATTAN DISTANCE
             }
         }
     }
@@ -103,7 +100,6 @@ public class GridController {
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid.length; j++) {
 
-                // TODO: CALL MANHATTAN DISTANCE METHOD FOR EACH CHILD
                 t = grid[i][j];
                 // Move up
                 if ((t.getyPosition() + t.getNumber()) < grid.length && !grid[t.getyPosition() + t.getNumber()][t.getxPosition()].isVisited()) {

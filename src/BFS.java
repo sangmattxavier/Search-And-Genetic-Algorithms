@@ -42,6 +42,7 @@ public class BFS {
                     tile.parent = t;
                     tile.setMinimumDistance(tile.parent.getMinimumDistance()+1);
 
+                    // one of the children is the goal, found a path to goal
                     if(tile.getxPosition() == grid.length -1 && tile.getyPosition() == grid.length - 1){
                         System.out.println("BFS found path to goal: ");
                         Tile temp = tile;
@@ -60,6 +61,7 @@ public class BFS {
                     }
                 }
 
+                // move on to next tile in queue
                 q.remove();
                 t = q.peek();
 
